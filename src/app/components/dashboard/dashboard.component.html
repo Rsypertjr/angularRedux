@@ -1,0 +1,24 @@
+<h2 id="dashHeader">DashBoard</h2>
+<div id="dashboard" class="bg-1">
+  <table class="table table-bordered">
+    <thead>    
+      <tr>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+   
+    <tbody>
+          <tr *ngFor="let user of users">
+                <td *ngIf="user === selectedUser">{{user.firstName}}</td>
+                <td *ngIf="user === selectedUser">{{user.lastName}}</td>
+                <td *ngIf="user === selectedUser">{{user.email}}</td>
+          </tr>
+    </tbody>
+  </table>
+  <div class="form-group">
+            <button (click)="goBack()" class="btn btn-primary">Back</button>
+            <button (click)="edit.emit(selectedUser)" class="btn btn-primary">Edit</button>
+  </div>
+</div>

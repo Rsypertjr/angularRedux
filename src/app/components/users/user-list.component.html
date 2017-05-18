@@ -1,0 +1,12 @@
+<ul>
+    <li class="aUser"
+        *ngFor="let user of users"
+        (click)="onSelect.emit(user)">
+        <div class="listDisplay"><span class="badge">Name:</span><div>{{user.firstName}} {{user.lastName}}</div></div> 
+        <div class="listDisplay"><span class="badge">Email:</span><div>{{user.email}}</div></div> 
+        <div class="buttonDisplay">      
+            <button (click)="delete($event, user)" class="delete-button btn btn-success" >Delete</button>
+            <button (click)="dashboard.emit(user)" class="btn btn-success">Dashboard</button>   
+        </div>        
+    </li>
+</ul>

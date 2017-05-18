@@ -1,0 +1,35 @@
+
+<div id="usersContainer" class="bg-1 container" *ngIf="seeUserInput">
+        <h3 id="usersHeader">New Users</h3>
+        <div id="userList" *ngIf="isPressedListButton">
+            <rx-user-list
+                [users]="users | async"
+                [selectedUser]="selectedUser"
+                (onSelect)="select($event)"
+                (onDelete)="delete($event)"
+                (dashboard)="seeDashboard($event)">
+            </rx-user-list>
+        </div>
+        <div id="addSeeButtons" *ngIf="notPressedAddButton" >
+            <button (click)="addUser()" class="btn btn-primary">Add New User</button>
+            <button (click)="seeList()" class="btn btn-primary">See User List</button>
+        </div>
+        <div  id="userInput" *ngIf="addingUser">
+            <rx-user-detail   
+                (close)="close()"                
+                [selectedUser]="selectedUser">
+            </rx-user-detail>
+        </div>
+
+</div>
+<div class="bg-1" *ngIf="isPressedDashboardButton">
+        <div class="container">
+                <rx-dashboard           
+                    (back)="goBack()"     
+                    (edit)="edit($event)"               
+                    [users]="users | async"
+                    [selectedUser] = "selectedUser"
+                ></rx-dashboard>
+        </div>
+</div>
+<!--<router-outlet></router-outlet> -->

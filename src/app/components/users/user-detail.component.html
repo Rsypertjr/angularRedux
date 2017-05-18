@@ -1,0 +1,9 @@
+<user-form
+    [user]="user | async"       
+    [selectedUser]="selectedUser"
+    (save)="save($event)"
+    (saveEdit)="saveEdit($event)"
+    (back)="goBack()"  
+    >
+</user-form>
+  
