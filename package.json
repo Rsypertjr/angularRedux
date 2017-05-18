@@ -9,8 +9,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-	"start": "node server.js",
-	"postinstall":"ng build --env=prod --output-hashing none"
+	//"start": "node server.js",
+	//"postinstall":"ng build --env=prod --output-hashing none"
   },
   "private": true,
   "dependencies": {    
@@ -50,8 +50,8 @@
     "tslint": "~4.5.0",
     "typescript": "~2.2.0"
   },
-  "engines": {
+/* "engines": {
 	"node": "6.10.2",
 	"npm": "3.10.10"
-  }
+  }*/
 }
