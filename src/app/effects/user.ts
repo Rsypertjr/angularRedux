@@ -8,6 +8,7 @@ import {UserActions} from '../actions';
 import {UserService} from '../services';
 import {User} from '../models';
 
+
 @Injectable()
 export class UserEffects {
 
