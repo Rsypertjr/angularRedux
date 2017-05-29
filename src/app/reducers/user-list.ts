@@ -34,7 +34,7 @@ export default function (state = initialState, action: Action): UserListState {
 
         case UserActions.UPDATE_USER_SUCCESS: {
             return state.map(item => {
-                    return item.id === action.payload.id ? 
+                    return item.email === action.payload.email ? 
                       Object.assign({}, item, action.payload) : item;
                 });          
         }
