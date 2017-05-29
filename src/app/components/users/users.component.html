@@ -11,8 +11,8 @@
             </rx-user-list>
         </div>
         <div id="addSeeButtons" *ngIf="notPressedAddButton" >
-            <button (click)="addUser()" class="btn btn-primary">Add New User</button>
-            <button (click)="seeList()" class="btn btn-primary">See User List</button>
+            <button  (click)="addUser()" class="btn btn-primary frontButtons">Add New User</button>
+            <button  (click)="seeList()" class="btn btn-primary frontButtons">See User List</button>
         </div>
         <div  id="userInput" *ngIf="addingUser">
             <rx-user-detail   

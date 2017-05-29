@@ -39,7 +39,7 @@ export class UserDetail implements OnInit, OnDestroy {
             .select<string>('id')
             .subscribe(id => {
                 if (id) {
-                    this.store.dispatch(this.userActions.getUser(id));
+                    this.store.dispatch(this.userActions.getUserSuccess(id));
                     this.navigated = true;
                 } else {
                     this.store.dispatch(this.userActions.resetBlankUser());
@@ -60,7 +60,7 @@ export class UserDetail implements OnInit, OnDestroy {
 
     save(user:User){
         user.id = ++this.cindex;
-        this.store.dispatch(this.userActions.addUser(user));    
+        this.store.dispatch(this.userActions.addUserSuccess(user));    //bypass API
         this.goBack(user);
     }
 
