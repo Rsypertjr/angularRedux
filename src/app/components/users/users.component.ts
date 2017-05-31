@@ -42,35 +42,13 @@ export class Users {
         this.notPressedAddButton = true;
         this.isPressedListButton = false;
         this.isPressedDashboardButton = false;
-        this.seeUserInput = true;     
-/* Attempt to pre-load state/store from json file
-         this.svc.getUsers()
-             .then( function(res){
-                 var aUser:User = {id:0,firstName: '',
-                                    lastName: '', email: ''};
-                 var tUsers:User[] = [];
-                 var stateArr:User[] = [];
-                 var sUsers:[any] = res.json();
-                 var length:number = parseInt(JSON.stringify(sUsers.length));
-                 
-                 for(var i=0;i<length;i++){
-                     tUsers[i] = {id:0,firstName: '',lastName: '', email: ''};
-                     tUsers[i].id = parseInt(sUsers[i].id);
-                     tUsers[i].firstName = sUsers[i].firstName;
-                     tUsers[i].lastName = sUsers[i].lastName;
-                     tUsers[i].email = sUsers[i].email;                    
-                     stateArr.push(tUsers[i]);
-                 }
-                 alert(JSON.stringify(stateArr));
-                 this.store.dispatch(this.userActions.addUserSuccess(stateArr));
-                           
-             });       */
-      
+        this.seeUserInput = true;    
     }
  
 
     ngOnInit(){
         this.router.navigate(['users']);
+             
     }
 
     addUser(){

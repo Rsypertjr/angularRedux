@@ -1,7 +1,9 @@
 //app/services/user.ts
 
 import {Injectable} from '@angular/core';
-import {Http, Headers} from '@angular/http';
+import {Http, Headers, Response} from '@angular/http';
+import 'rxjs/add/operator/toPromise';
+
 import {Observable} from 'rxjs/Observable';
 import {User} from '../models';
 const BASE_URL2 = 'http://localhost:3000/db';
@@ -13,9 +15,10 @@ export class UserService {
     user:URLSearchParams;
     constructor (private http: Http) {}
 
-    getUsers(): Observable<User[]>{
+    getUsers(): Promise<User[]>{
        return this.http.get(BASE_URL,HEADER) 
-       .map(res => res.json());
+            .toPromise()
+            .then(response => response.json() as User[]);
     }
 
     getUser(id): Observable<User> {
